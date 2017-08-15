@@ -14,7 +14,7 @@
       { name: 'Kait', year: 1986 },
       { name: 'Irv', year: 1970 },
       { name: 'Lux', year: 2015 }
-    ];
+    ]; 
 
     const comments = [
       { text: 'Love this!', id: 523423 },
@@ -26,15 +26,39 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+      const isAdults = people.some(function(person) {
+        if (person.year < 1998) {
+          return true;
+        }      
+      });
+     console.log({isAdults});
+
     // Array.prototype.every() // is everyone 19 or older?
+      const isEvery = people.every(function(person) {
+            if (person.year < 1998) {
+              return true;
+            }
+      });
+ 
 
     // Array.prototype.find()
-    // Find is like filter, but instead returns just the one you are looking for
+    // Find is like filter, but instead returns just the one you are looking for.
     // find the comment with the ID of 823423
+    const comment = comments.find(function(comment) {
+      if(comment.id === 823423) {
+        return true; 
+      }
+    }); 
+
+    console.log(comment);
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+
+    const index = comments.findIndex(comment => comment.id === 823423);
+    console.log(index);
+    
 
   </script>
 </body>
